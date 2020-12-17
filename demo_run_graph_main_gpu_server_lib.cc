@@ -15,7 +15,7 @@
 // An example of sending OpenCV webcam frames into a MediaPipe graph.
 // This example requires a linux computer and a GPU with EGL support drivers.
 #include <cstdlib>
-#include <evhttp.h>
+#include <evhttp.h> // add ed evhttp.h 
 extern "C"
 {
 #include <sys/types.h>
