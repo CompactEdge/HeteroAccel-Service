@@ -1,7 +1,7 @@
 # Copyright (C) 2018-2019 Intel Corporation
 # SPDX-License-Identifier: Apache-2.0
 #
-
+#
 set (TARGET_NAME "text_detection_demo1")
 
 set(SRC include/image_grabber.hpp
