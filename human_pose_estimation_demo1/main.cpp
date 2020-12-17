@@ -1,7 +1,7 @@
 // Copyright (C) 2018-2019 Intel Corporation
 // SPDX-License-Identifier: Apache-2.0
 //
-
+//
 /**
 * \brief The entry point for the Inference Engine Human Pose Estimation demo application
 * \file human_pose_estimation_demo/main.cpp
