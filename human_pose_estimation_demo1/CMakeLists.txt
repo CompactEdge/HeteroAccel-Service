@@ -1,7 +1,7 @@
 # Copyright (C) 2018-2019 Intel Corporation
 # SPDX-License-Identifier: Apache-2.0
 #
-
+#
 set(TARGET_NAME "human_pose_estimation_demo1")
 
 # Find OpenCV components if exist
