@@ -1,0 +1,215 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  namespace: openvino
+  name: intelgpu
+  labels:
+    app: openvino-gpu
+spec:
+  parallelism: 1
+  template:
+    metadata:
+      labels:
+        app: openvino-gpu
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: intelgpu
+          image: openvino/cpu_gpu_npu:21.04 
+          imagePullPolicy: IfNotPresent
+          env: 
+            - name: test
+              value: '\,'
+          volumeMounts:
+          - mountPath: /dev
+            name: dev
+          securityContext:
+            privileged: true
+          resources:
+              limits:
+                  gpu.intel.com/i915: 1
+          command: [bash, '-c']
+          args: ['echo $(test) && source /opt/intel/openvino_2021.4.582/bin/setupvars.sh &&cd /opt/intel/openvino_2021/inference_engine/demos && ./build_demos.sh && cd ~/omz_demos_build/intel64/Release && ./smart_classroom_gpu -student_ac "sitting$(test) standing$(test) raising hand" -i 0 -m_act /root/modelfiles/intel/person-detection-action-recognition-0005/FP32/person-detection-action-recognition-0005.xml   -m_fd /root/modelfiles/intel/face-detection-adas-0001/FP32/face-detection-adas-0001.xml']
+      volumes:
+        - name: dev
+          hostPath:
+            path: /dev
+      nodeSelector:
+          intel: gpu
+  backoffLimit: 1
+---
+    
+apiVersion: v1
+kind: Service
+metadata:
+  name: openvino-gpu
+  namespace: openvino
+spec:
+  type: NodePort
+  selector:
+      app : openvino-gpu
+  ports:
+      # 기본적으로 그리고 편의상 `targetPort` 는 `port` 필드와 동일한 값으로 설정된다.
+    - port: 5011
+      targetPort: 5011
+      nodePort: 30140
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: openvino-cpu
+  namespace: openvino
+spec:
+  #selector:
+  #  matchLabels:
+  #    app: openvino-cpu
+  parallelism: 1
+  template:
+    metadata:
+      labels:
+        app: openvino-cpu
+    spec:
+      containers:
+      - name: openvino-cpu
+        image: openvino/fpga:19.1
+        env: 
+        - name: test
+          value: '\,'
+        command: [bash,"-c"]
+        args: ["cd /opt/intel/openvino/deployment_tools/demo && source  /root/fpga_support_files/setup_env.sh&& cd /opt/intel/openvino/inference_engine/samples && ./build_samples.sh  &&cd ~/inference_engine_samples_build/intel64/Release && ./text_detection_demo1 -i ~/Downloads/download_model/text_detection/test_detection.png -m_td /root/modelfiles/Retail/object_detection/text/pixel_link_mobilenet_v2/0001/text-detection-0002.xml -m_tr /root/modelfiles/Retail/text_recognition/bilstm_crnn_bilstm_decoder/0012/dldt/text-recognition-0012.xml -r"]
+        volumeMounts:
+#        - mountPath: /dev
+#          name: dev
+        securityContext:
+          privileged: true
+        
+#      volumes:
+#      - name: dev
+#        hostPath:
+#          path: /dev
+      nodeSelector:
+        intel: fpga 
+      restartPolicy: Never
+  backoffLimit: 0
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: openvino-cpu
+  namespace: openvino
+spec:
+  type: NodePort
+  selector:
+      app: openvino-fpga
+  ports:
+      # 기본적으로 그리고 편의상 `targetPort` 는 `port` 필드와 동일한 값으로 설정된다.
+    - port: 5002
+      targetPort: 5015
+      nodePort: 30143
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: openvino-fpga
+  namespace: openvino
+spec:
+  #selector:
+  #  matchLabels:
+  #    app: openvino-fpga
+  parallelism: 1
+  template:
+    metadata:
+      labels:
+        app: openvino-fpga
+    spec:
+      containers:
+      - name: openvino-fpga
+        image: openvino/fpga:19.1
+        env: 
+        - name: test
+          value: '\,'
+        command: [bash,"-c"]
+        args: ["cd /opt/intel/openvino/deployment_tools/demo && echo /opt/altera/aocl-pro-rte/aclrte-linux64/board/a10_ref/linux64/lib/libaltera_a10_ref_mmd.so >/opt/Intel/OpenCL/Boards/a10_ref.fcd && source  /root/fpga_support_files/setup_env.sh&& aocl program acl0 /opt/intel/openvino/bitstreams/a10_devkit_bitstreams/2019R1_A10DK_FP16_AlexNet_GoogleNet.aocx&& cd /opt/intel/openvino/inference_engine/samples && ./build_samples.sh  &&cd ~/inference_engine_samples_build/intel64/Release && ./human_pose_estimation_demo1 -i cam -m /root/modelfiles/Transportation/human_pose_estimation/mobilenet-v1/dldt/human-pose-estimation-0001.xml -r -d HETERO:CPU$(test)FPGA"]
+        volumeMounts:
+        - mountPath: /dev
+          name: dev
+        securityContext:
+          privileged: true
+        
+      volumes:
+      - name: dev
+        hostPath:
+          path: /dev
+      nodeSelector:
+        intel: fpga 
+      restartPolicy: Never
+  backoffLimit: 0
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: openvino-fpga
+  namespace: openvino
+spec:
+  type: NodePort
+  selector:
+      app: openvino-fpga
+  ports:
+      # 기본적으로 그리고 편의상 `targetPort` 는 `port` 필드와 동일한 값으로 설정된다.
+    - port: 5010
+      targetPort: 5010
+      nodePort: 30142
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: openvino-npu
+  namespace: openvino
+spec:
+  parallelism: 1
+  template:
+    metadata:
+      labels:
+        app: openvino-npu
+    spec:
+      containers:
+      - name: openvino-npu
+        image: openvino/fpga:19.1
+        env: 
+        - name: test
+          value: '\,'
+        command: [bash,"-c"]
+        args: ["cd /opt/intel/openvino/deployment_tools/demo && source  /root/fpga_support_files/setup_env.sh&& cd /opt/intel/openvino/inference_engine/samples && ./build_samples.sh  &&cd ~/inference_engine_samples_build/intel64/Release && ./object_detection_demo_ssd_async -i cam -m /root/modelfiles/Retail/object_detection/face/sqnet1.0modif-ssd/0004/dldt/face-detection-retail-0004-fp16.xml -d HETERO:MYRIAD"]
+        volumeMounts:
+        - mountPath: /dev
+          name: dev
+        securityContext:
+          privileged: true
+        
+      volumes:
+      - name: dev
+        hostPath:
+          path: /dev
+      nodeSelector:
+        intel: fpga 
+      restartPolicy: Never
+  backoffLimit: 0
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: openvino-npu
+  namespace: openvino
+spec:
+  type: NodePort
+  selector:
+      app: openvino-fpga
+  ports:
+      # 기본적으로 그리고 편의상 `targetPort` 는 `port` 필드와 동일한 값으로 설정된다.
+    - port: 5004
+      targetPort: 5004
+      nodePort: 30144
+---
