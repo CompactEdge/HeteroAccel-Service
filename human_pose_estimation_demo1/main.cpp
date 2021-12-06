@@ -27,6 +27,8 @@ extern "C"
 #include <err.h>
 #include <event.h>
 #include <evhttp.h>
+#include <cstdlib>
+#include <signal.h>
 #include <event2/http_struct.h>
 #include <event2/keyvalq_struct.h>
 #include <termios.h>
