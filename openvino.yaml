@@ -82,7 +82,7 @@ spec:
 #          name: dev
         securityContext:
           privileged: true
-        
+#  Volume profile setting allowed
 #      volumes:
 #      - name: dev
 #        hostPath:
