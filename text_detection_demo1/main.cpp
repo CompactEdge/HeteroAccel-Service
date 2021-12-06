@@ -19,6 +19,8 @@
 
 #include <ext_list.hpp>
 #include <inference_engine.hpp>
+#include <unordered_map>
+#include <utility>
 
 #include <samples/common.hpp>
 #include <samples/slog.hpp>
