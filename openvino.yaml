@@ -15,7 +15,7 @@ spec:
       restartPolicy: Never
       containers:
         - name: intelgpu
-          image: openvino/cpu_gpu_npu:21.04 
+          image: openvino/cpu_gpu_npu:21.04  #intel openvino image 
           imagePullPolicy: IfNotPresent
           env: 
             - name: test
