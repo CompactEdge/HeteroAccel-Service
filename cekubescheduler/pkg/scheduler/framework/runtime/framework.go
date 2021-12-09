@@ -90,8 +90,9 @@ type frameworkImpl struct {
 	postBindPlugins      []framework.PostBindPlugin
 	permitPlugins        []framework.PermitPlugin
 
-	clientSet   clientset.Interface
-	metrics     *metric.Clientset
+	clientSet clientset.Interface
+	metrics   *metric.Clientset
+	// Node Metrics variable
 	nodeMetrics *v1beta1.NodeMetricsList
 
 	kubeConfig      *restclient.Config
