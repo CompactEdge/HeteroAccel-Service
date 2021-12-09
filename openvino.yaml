@@ -48,7 +48,7 @@ spec:
   type: NodePort
   selector:
       app : openvino-gpu
-  ports:
+  ports: #port testing
       # 기본적으로 그리고 편의상 `targetPort` 는 `port` 필드와 동일한 값으로 설정된다.
     - port: 5011
       targetPort: 5011
