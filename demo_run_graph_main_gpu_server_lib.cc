@@ -50,7 +50,7 @@ extern "C"
 #include "mediapipe/gpu/gl_calculator_helper.h"
 #include "mediapipe/gpu/gpu_buffer.h"
 #include <err.h>
-#include <event.h>
+
 #include <evhttp.h>
 #include "mediapipe/gpu/gpu_shared_data_internal.h"
 #include "mediapipe/framework/formats/landmark.pb.h"
