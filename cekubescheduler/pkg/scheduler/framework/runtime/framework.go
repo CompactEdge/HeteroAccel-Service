@@ -1165,6 +1165,7 @@ func (f *frameworkImpl) Metrics() *metric.Clientset {
 	return f.metrics
 }
 
+// GetNodeMetrics Method
 func (f *frameworkImpl) GetNodeMetrics() *v1beta1.NodeMetricsList {
 	return f.nodeMetrics
 }
