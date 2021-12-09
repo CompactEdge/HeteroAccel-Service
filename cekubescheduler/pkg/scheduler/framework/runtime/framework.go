@@ -182,6 +182,7 @@ func WithClientSet(clientSet clientset.Interface) Option {
 	}
 }
 
+// WithMetrics Method Implementation
 func WithMetrics(metrics *metric.Clientset) Option {
 	return func(o *frameworkOptions) {
 		o.metrics = metrics
