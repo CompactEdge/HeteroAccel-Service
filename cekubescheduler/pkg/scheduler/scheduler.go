@@ -590,6 +590,7 @@ func (sched *Scheduler) scheduleOne(ctx context.Context) {
 		// Get Current CPU usage
 		curCPU := fwk.GetNodeMetrics().Items[i].Usage.Cpu().MilliValue()
 
+		// Get CPU Usage Ratio
 		//klog.InfoS(strconv.FormatInt(curCPU, 10))
 		res := float64(curCPU) / float64(alloCPU)
 
