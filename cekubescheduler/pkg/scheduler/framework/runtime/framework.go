@@ -1170,6 +1170,7 @@ func (f *frameworkImpl) GetNodeMetrics() *v1beta1.NodeMetricsList {
 	return f.nodeMetrics
 }
 
+// SetNodeMetrics Method
 func (f *frameworkImpl) SetNodeMetrics(nodeMetrics *v1beta1.NodeMetricsList) {
 	f.nodeMetrics = nodeMetrics
 }
