@@ -181,6 +181,7 @@ func (c *Configurator) create() (*Scheduler, error) {
 		frameworkruntime.WithClusterEventMap(c.clusterEventMap),
 		frameworkruntime.WithParallelism(int(c.parallellism)),
 		frameworkruntime.WithExtenders(extenders),
+		// Add WithMectircs method
 		frameworkruntime.WithMetrics(mc),
 	)
 	if err != nil {
