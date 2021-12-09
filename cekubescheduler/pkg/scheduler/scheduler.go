@@ -124,6 +124,7 @@ func NodeMetricThread(ctx context.Context, sched *Scheduler, fwk *framework.Fram
 
 	// Update Node Metric To nodeMetrics
 	for {
+		// Get Current Node Resources
 		nodeMetrics, _ := (*fwk).Metrics().MetricsV1beta1().NodeMetricses().List(ctx, metav1.ListOptions{})
 
 		// if err != nil {
