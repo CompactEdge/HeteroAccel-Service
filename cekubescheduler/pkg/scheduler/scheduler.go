@@ -581,6 +581,7 @@ func (sched *Scheduler) scheduleOne(ctx context.Context) {
 			continue
 		}
 
+		// Get CPU Capacity
 		//klog.InfoS(nodeMetrics.Items[i].ObjectMeta.Name)
 		alloCPU := sched.SchedulerCache.Dump().Nodes[fwk.GetNodeMetrics().Items[i].ObjectMeta.Name].Allocatable.MilliCPU
 
