@@ -156,6 +156,8 @@ func (c *Configurator) create() (*Scheduler, error) {
 	if err != nil {
 		panic(err)
 	}
+
+	// Metric Server Configuration
 	mc, err := metric.NewForConfig(config)
 	if err != nil {
 		panic(err)
