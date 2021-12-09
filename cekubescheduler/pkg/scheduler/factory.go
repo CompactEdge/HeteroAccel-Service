@@ -149,6 +149,7 @@ func (c *Configurator) create() (*Scheduler, error) {
 		}
 	}
 
+	// Add Mectric Server Information
 	// This is for Metric Server
 	// Load Config File
 	config, err := clientcmd.BuildConfigFromFlags(c.kubeConfig.Host, c.kubeConfigLocation)
