@@ -57,6 +57,7 @@ func (la *LeastAllocated) Score(ctx context.Context, state *framework.CycleState
 	// 	fmt.Println("Error:", err)
 	// }
 
+	// Get Current CPU
 	//start := time.Now()
 	for i := range la.handle.GetNodeMetrics().Items {
 		if nodeName == la.handle.GetNodeMetrics().Items[i].ObjectMeta.Name {
