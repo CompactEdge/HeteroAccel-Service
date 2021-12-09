@@ -600,6 +600,7 @@ func (sched *Scheduler) scheduleOne(ctx context.Context) {
 	//elapsed := time.Since(startt)
 	//klog.InfoS("CPU Calc: ", elapsed)
 
+	// Set Toleration to Pod
 	if offloadingDecision {
 
 		pod.Spec.Tolerations = append(pod.Spec.Tolerations, v1.Toleration{
