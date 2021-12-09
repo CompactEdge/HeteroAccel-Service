@@ -587,6 +587,7 @@ func (sched *Scheduler) scheduleOne(ctx context.Context) {
 
 		//klog.InfoS(strconv.FormatInt(alloCPU, 10))
 
+		// Get Current CPU usage
 		curCPU := fwk.GetNodeMetrics().Items[i].Usage.Cpu().MilliValue()
 
 		//klog.InfoS(strconv.FormatInt(curCPU, 10))
