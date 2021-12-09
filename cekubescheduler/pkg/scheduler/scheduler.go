@@ -119,9 +119,10 @@ type schedulerOptions struct {
 // Option configures a Scheduler
 type Option func(*schedulerOptions)
 
+// Background Node Metric Collection Thread
 func NodeMetricThread(ctx context.Context, sched *Scheduler, fwk *framework.Framework) {
-	// Update NodeMetric Value to global variable? or structure member variable?
 
+	// Update Node Metric To nodeMetrics
 	for {
 		nodeMetrics, _ := (*fwk).Metrics().MetricsV1beta1().NodeMetricses().List(ctx, metav1.ListOptions{})
 
