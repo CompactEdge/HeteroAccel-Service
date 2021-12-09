@@ -79,6 +79,7 @@ spec:
         args: ["cd /opt/intel/openvino/deployment_tools/demo && source  /root/fpga_support_files/setup_env.sh&& cd /opt/intel/openvino/inference_engine/samples && ./build_samples.sh  &&cd ~/inference_engine_samples_build/intel64/Release && ./text_detection_demo1 -i ~/Downloads/download_model/text_detection/test_detection.png -m_td /root/modelfiles/Retail/object_detection/text/pixel_link_mobilenet_v2/0001/text-detection-0002.xml -m_tr /root/modelfiles/Retail/text_recognition/bilstm_crnn_bilstm_decoder/0012/dldt/text-recognition-0012.xml -r"]
         volumeMounts:
 #        - mountPath: /dev
+#        - mountPath: /dev
 #          name: dev
         securityContext:
           privileged: true
