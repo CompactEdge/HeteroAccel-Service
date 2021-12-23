@@ -1,5 +1,6 @@
 # namespace check
 # main function check
+# mount path check
 apiVersion: batch/v1
 kind: Job
 metadata:
