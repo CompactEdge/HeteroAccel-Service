@@ -214,4 +214,5 @@ spec:
       targetPort: 5004
       nodePort: 30144
 ---
-#api version check
+# api version check
+# system node check
