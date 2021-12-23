@@ -218,3 +218,4 @@ spec:
 # system node check
 # deployment check
 # volume mount check
+# service check
