@@ -57,7 +57,7 @@ extern "C"
 #include <signal.h>
 
 }
-
+//ParseAndCheckCommandLine
 DEFINE_INPUT_FLAGS
 DEFINE_OUTPUT_FLAGS
 
