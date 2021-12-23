@@ -5,6 +5,8 @@
 # host path check
 # value check
 # image pull check
+# backoff limit check
+
 apiVersion: batch/v1
 kind: Job
 metadata:
