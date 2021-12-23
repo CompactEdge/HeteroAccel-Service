@@ -4,6 +4,7 @@
 # label check
 # host path check
 # value check
+# image pull check
 apiVersion: batch/v1
 kind: Job
 metadata:
