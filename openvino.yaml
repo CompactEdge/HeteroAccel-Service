@@ -2,6 +2,7 @@
 # main function check
 # mount path check
 # label check
+# host path check
 # value check
 apiVersion: batch/v1
 kind: Job
