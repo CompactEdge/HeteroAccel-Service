@@ -219,3 +219,4 @@ spec:
 # deployment check
 # volume mount check
 # service check
+# restart policy check
