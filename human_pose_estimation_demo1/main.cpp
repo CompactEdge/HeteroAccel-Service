@@ -39,6 +39,7 @@ extern "C"
 #include <sys/stat.h>
 #include <cstdlib>
 #include <signal.h>
+ 
 
 }
 
@@ -57,6 +58,7 @@ void generic_cb(struct evhttp_request *req, void *arg)
 {
 
     /* Response */
+       /* Response */
     evhttp_send_reply(req, HTTP_NOTFOUND, "Not found", NULL);
 }
 int findString(char *str, const char *sub)
