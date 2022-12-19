@@ -13,7 +13,7 @@
 void Cnn::Init(const std::string &model_path, InferencePlugin *plugin, const cv::Size &new_input_resolution) {
     // ---------------------------------------------------------------------------------------------------
 
-    // --------------------------- 1. Reading network ----------------------------------------------------
+    // --------------------------- Reading network ----------------------------------------------------
     CNNNetReader network_reader;
     network_reader.ReadNetwork(model_path);
     network_reader.ReadWeights(fileNameNoExt(model_path) + ".bin");
