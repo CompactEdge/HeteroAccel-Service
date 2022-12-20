@@ -12,6 +12,7 @@
 
 Grabber::~Grabber() {}
 
+//init video grabber
 VideoGrabber::VideoGrabber(const std::string &path, bool is_web_cam): cap(path) {
     if (!cap.isOpened()) throw std::runtime_error("Could not open a video: " + path);
     if (is_web_cam) {
