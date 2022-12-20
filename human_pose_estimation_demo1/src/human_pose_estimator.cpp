@@ -16,6 +16,7 @@
 namespace human_pose_estimation {
 const size_t HumanPoseEstimator::keypointsNumber = 18;
 
+  //stride 8
 HumanPoseEstimator::HumanPoseEstimator(const std::string& modelPath="\0",
                                        const std::string& targetDeviceName="\0",
                                        bool enablePerformanceReport)
