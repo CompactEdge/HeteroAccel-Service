@@ -131,8 +131,8 @@ static void showUsage() {
     std::cout << "    -u                        " << utilization_monitors_message << std::endl;
 }
 
+// ---------------------------Parsing and validation of input args--------------------------------------
 bool ParseAndCheckCommandLine(int argc, char *argv[]) {
-    // ---------------------------Parsing and validation of input args--------------------------------------
     gflags::ParseCommandLineNonHelpFlags(&argc, &argv, true);
     if (FLAGS_h) {
         showUsage();
