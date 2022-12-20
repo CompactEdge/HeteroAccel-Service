@@ -357,6 +357,7 @@ void generic_cb(struct evhttp_request *req, void *arg)
   //////////////////////////////////////////////////////////
 }
 
+//find string
 int findString(char *str, char *sub)
 {
   char *p1, *p2, *p3;
