@@ -11,6 +11,7 @@
 #include <limits>
 #include <stdexcept>
 
+//softmax calculation
 namespace  {
     void softmax(const std::vector<float>::const_iterator& begin, const std::vector<float>::const_iterator& end, int *argmax, float *prob) {
         auto max_element = std::max_element(begin, end);
