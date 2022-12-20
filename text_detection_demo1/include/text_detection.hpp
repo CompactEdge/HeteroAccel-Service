@@ -9,6 +9,7 @@
 #include <inference_engine.hpp>
 #include <opencv2/opencv.hpp>
 
+//text inference engine
 using namespace InferenceEngine;
 
 std::vector<cv::RotatedRect> postProcess(const InferenceEngine::BlobMap &blobs, const cv::Size& image_size,
