@@ -9,7 +9,7 @@
 
 #include <samples/common.hpp>
 
-
+//CNN init
 void Cnn::Init(const std::string &model_path, InferencePlugin *plugin, const cv::Size &new_input_resolution) {
     // ---------------------------------------------------------------------------------------------------
 
