@@ -7,4 +7,5 @@
 #include <string>
 #include <vector>
 
+//CTC Decoder
 std::string CTCGreedyDecoder(const std::vector<float> &data, const std::string& alphabet, char pad_symbol, double *conf);
