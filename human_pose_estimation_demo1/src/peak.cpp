@@ -26,6 +26,7 @@ TwoJointsConnection::TwoJointsConnection(const int firstJointIdx,
       secondJointIdx(secondJointIdx),
       score(score) {}
 
+//find peaks
 void findPeaks(const std::vector<cv::Mat>& heatMaps,
                const float minPeaksDistance,
                std::vector<std::vector<Peak> >& allPeaks,
