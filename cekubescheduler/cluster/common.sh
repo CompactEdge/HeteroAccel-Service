@@ -86,6 +86,7 @@ function create-kubeconfig() {
   done
   IFS=$OLD_IFS
 
+  # local cluster args
   local cluster_args=(
       "--server=${KUBE_SERVER:-https://${KUBE_MASTER_IP}}"
   )
