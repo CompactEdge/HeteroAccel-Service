@@ -92,7 +92,7 @@ DEFINE_bool(auto_resize, false, input_resizable_message);
 
 
 /**
-* \brief This function show a help message
+* \brief This function show a help message 1
 */
 static void showUsage() {
     std::cout << std::endl;
