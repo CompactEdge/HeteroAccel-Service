@@ -10,6 +10,7 @@
 
 #include <opencv2/opencv.hpp>
 
+//support Video, Image ImageList
 class Grabber {
   public:
     virtual void GrabNextImage(cv::Mat *frame) = 0;
