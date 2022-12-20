@@ -211,6 +211,7 @@ void HumanPoseEstimator::correctCoordinates(std::vector<HumanPose>& poses,
     }
 }
 
+  //input width changed
 bool HumanPoseEstimator::inputWidthIsChanged(const cv::Size& imageSize) {
     double scale = static_cast<double>(inputLayerSize.height) / static_cast<double>(imageSize.height);
     cv::Size scaledSize(static_cast<int>(cvRound(imageSize.width * scale)),
