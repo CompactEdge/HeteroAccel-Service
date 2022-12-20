@@ -9,6 +9,7 @@
 #include <unordered_map>
 #include <vector>
 
+//softmax calculation
 namespace {
 void softmax(std::vector<float>* data) {
     auto &rdata = *data;
