@@ -25,7 +25,7 @@ static const char video_message[] = "Required. Path to a video file (specify \"c
 /// @brief message for model argument
 static const char model_message[] = "Required. Path to an .xml file with a trained model.";
 
-/// @brief message for plugin argument
+/// @brief message for plugin_message argument
 static const char plugin_message[] = "Optional. Plugin name. For example MKLDNNPlugin. If this parameter is pointed, " \
 "the demo will look for this plugin only.";
 
