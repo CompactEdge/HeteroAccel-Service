@@ -12,6 +12,7 @@
 
 using namespace InferenceEngine;
 
+//CNN model create
 class Cnn {
   public:
     Cnn():is_initialized_(false), channels_(0), input_data_(nullptr), time_elapsed_(0), ncalls_(0) {}
