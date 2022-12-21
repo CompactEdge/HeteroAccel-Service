@@ -21,6 +21,7 @@ struct Peak {
     float score;
 };
 
+//peaks indecies struct
 struct HumanPoseByPeaksIndices {
     explicit HumanPoseByPeaksIndices(const int keypointsNumber);
 
