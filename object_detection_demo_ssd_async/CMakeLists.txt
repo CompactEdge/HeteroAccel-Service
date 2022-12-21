@@ -1,6 +1,5 @@
 # Copyright (C) 2018-2019 Intel Corporation
 # SPDX-License-Identifier: Apache-2.0
-#
 
 set(TARGET_NAME "object_detection_demo_ssd_async")
 
@@ -35,7 +34,6 @@ add_dependencies(${TARGET_NAME} gflags)
 
 set_target_properties(${TARGET_NAME} PROPERTIES "CMAKE_CXX_FLAGS" "${CMAKE_CXX_FLAGS} -fPIE"
 COMPILE_PDB_NAME ${TARGET_NAME})
-
 
 target_link_libraries(${TARGET_NAME} IE::ie_cpu_extension ${InferenceEngine_LIBRARIES} gflags ${OpenCV_LIBRARIES})
 
