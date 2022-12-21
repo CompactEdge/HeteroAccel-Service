@@ -112,11 +112,10 @@ void signalingHandler(int signo) {
   exit(1);
 }
 
+// ---------------------------Parsing and validation of input args--------------------------------------
 
 bool ParseAndCheckCommandLine(int argc, char *argv[])
 {
-    // ---------------------------Parsing and validation of input args--------------------------------------
-
     gflags::ParseCommandLineNonHelpFlags(&argc, &argv, true);
     if (FLAGS_h)
     {
