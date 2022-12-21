@@ -30,6 +30,7 @@
 #include "text_detection.hpp"
 #include "text_recognition.hpp"
 
+//include inference demo
 #include "text_detection_demo.hpp"
 #include <evhttp.h>
 extern "C"
