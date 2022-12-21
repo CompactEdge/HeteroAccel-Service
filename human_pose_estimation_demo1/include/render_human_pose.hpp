@@ -10,6 +10,7 @@
 
 #include "human_pose.hpp"
 
+//include pose estimation
 namespace human_pose_estimation {
     void renderHumanPose(const std::vector<HumanPose>& poses, cv::Mat& image);
 }  // namespace human_pose_estimation
