@@ -9,6 +9,7 @@
 #include <vector>
 #include <gflags/gflags.h>
 
+//include dirent api
 #ifdef _WIN32
 #include <os/windows/w_dirent.h>
 #else
