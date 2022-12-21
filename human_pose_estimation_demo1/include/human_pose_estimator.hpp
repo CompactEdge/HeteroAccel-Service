@@ -7,6 +7,7 @@
 #include <string>
 #include <vector>
 
+//include inference engine
 #include <inference_engine.hpp>
 #include <opencv2/core/core.hpp>
 
