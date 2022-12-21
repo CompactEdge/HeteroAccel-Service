@@ -18,7 +18,7 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-# Runs tests related to kubectl delete --all-namespaces.
+# Runs tests related to kubectl delete all namespaces.
 run_kubectl_delete_allnamespaces_tests() {
   set -o nounset
   set -o errexit
