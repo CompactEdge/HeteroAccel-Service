@@ -18,6 +18,7 @@
 #include "render_human_pose.hpp"
 #include <evhttp.h>
 
+//support c language
 extern "C"
 {
 #include <sys/types.h>
