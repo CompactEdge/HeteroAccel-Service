@@ -57,7 +57,6 @@ For example, use the following command line command to run the application:
 ```
 
 ## Demo Output
-
 The demo uses OpenCV to display the resulting frame with detections rendered as bounding boxes and text.
 
 ## See Also
