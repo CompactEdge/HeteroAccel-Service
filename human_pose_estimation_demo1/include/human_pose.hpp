@@ -8,6 +8,7 @@
 
 #include <opencv2/core/core.hpp>
 
+//human pose struct
 namespace human_pose_estimation {
 struct HumanPose {
     HumanPose(const std::vector<cv::Point2f>& keypoints = std::vector<cv::Point2f>(),
