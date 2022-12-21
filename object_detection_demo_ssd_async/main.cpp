@@ -23,6 +23,7 @@
 
 #include <inference_engine.hpp>
 
+//include api samples
 #include <samples/ocv_common.hpp>
 #include <samples/slog.hpp>
 #include <chrono>
