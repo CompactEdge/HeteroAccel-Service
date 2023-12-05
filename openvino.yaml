@@ -168,7 +168,7 @@ spec:
   selector:
       app: openvino-fpga
   ports:
-      # 기본적으로 그리고 편의상 `targetPort` 는 `port` 필드와 동일한 값으로 설정된다.
+      # 기본적으로 그리고 편의상 `targetPort` 는 `port` 필드와 동일한 값으로 설정
     - port: 5010
       targetPort: 5010
       nodePort: 30142
